@@ -23,6 +23,10 @@ const ChatInterface = () => {
     }
   };
 
+  const handleAgreementChange = (checked: boolean | "indeterminate") => {
+    setAgreed(checked === true);
+  };
+
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 animate-fade-in" style={{ animationDelay: "600ms" }}>
       <div className="space-y-6">
@@ -76,7 +80,7 @@ const ChatInterface = () => {
             <Checkbox
               id="terms"
               checked={agreed}
-              onCheckedChange={setAgreed}
+              onCheckedChange={handleAgreementChange}
               className="mt-1 data-[state=checked]:bg-bn-primary data-[state=checked]:border-bn-primary"
             />
             <label htmlFor="terms" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
