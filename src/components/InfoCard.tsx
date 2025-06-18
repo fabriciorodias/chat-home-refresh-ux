@@ -11,18 +11,18 @@ interface InfoCardProps {
 const InfoCard = ({ icon, title, children, delay = "0ms" }: InfoCardProps) => {
   return (
     <div 
-      className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300 animate-fade-in"
+      className="bg-white rounded-xl shadow-md border border-gray-100 p-4 hover:shadow-lg transition-all duration-300 animate-fade-in"
       style={{ animationDelay: delay }}
     >
-      <div className="flex items-start space-x-4">
-        <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-bn-primary to-bn-accent rounded-xl flex items-center justify-center shadow-md">
+      <div className="flex items-start space-x-3">
+        <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-bn-primary to-bn-accent rounded-lg flex items-center justify-center shadow-sm">
           {icon}
         </div>
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center">
+        <div className="flex-1 min-w-0">
+          <h3 className="text-lg font-bold text-gray-800 mb-2 flex items-center">
             {title}
           </h3>
-          <div className="text-gray-600 leading-relaxed">
+          <div className="text-gray-600 leading-relaxed text-sm">
             {children}
           </div>
         </div>
