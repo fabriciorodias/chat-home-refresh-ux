@@ -4,7 +4,7 @@ import ChatHeader from "@/components/ChatHeader";
 import InfoCard from "@/components/InfoCard";
 import ChatInterface from "@/components/ChatInterface";
 import UserProfile from "@/components/UserProfile";
-import { HelpCircle, Settings } from "lucide-react";
+import { HelpCircle, Settings, Video, BookOpen } from "lucide-react";
 
 const Index = () => {
   return (
@@ -25,7 +25,7 @@ const Index = () => {
             <div className="grid lg:grid-cols-2 gap-8">
               <InfoCard 
                 icon={<HelpCircle className="text-white" size={24} />}
-                title="Quem é a LuzIA?"
+                title="Quem sou?"
                 delay="200ms"
               >
                 <div className="space-y-4">
@@ -33,10 +33,13 @@ const Index = () => {
                     Olá! Sou a LuzIA, sua assistente virtual para dúvidas sobre normas de concessão de crédito.
                   </p>
                   <p>
-                    Estou aqui para orientar, mas não tomo decisões. Você pode fazer até 10 perguntas por chat. Após isso, é só iniciar um novo.
+                    Posso te orientar, mas não tomo decisões.
                   </p>
                   <p>
-                    Cada chat é independente, então seja claro e específico nas suas perguntas para agilizar o atendimento.
+                    Você pode me fazer até 10 perguntas por chat.
+                  </p>
+                  <p>
+                    Cada chat é independente, por isso seja claro e objetivo ao perguntar.
                   </p>
                   <p className="flex items-center">
                     Conte comigo! <span className="ml-2">😊</span>
@@ -46,43 +49,88 @@ const Index = () => {
 
               <InfoCard 
                 icon={<Settings className="text-white" size={24} />}
-                title="Como utilizar?"
+                title="Como funciona?"
                 delay="400ms"
               >
                 <div className="space-y-3">
+                  <p className="font-medium text-gray-700">Veja como posso te ajudar:</p>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="text-bn-primary mr-2">•</span>
-                      <span>Faça perguntas claras e objetivas.</span>
+                      <span>Envie sua dúvida em linguagem clara e objetiva</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-bn-primary mr-2">•</span>
-                      <span>Seja específico: cite o produto, cliente ou situação.</span>
+                      <span>Respondo apenas sobre concessão de crédito</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-bn-primary mr-2">•</span>
-                      <span>Use termos normativos conhecidos.</span>
+                      <span>Baseio minhas respostas nos normativos do banco</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-bn-primary mr-2">•</span>
-                      <span>Informe o contexto e as exceções.</span>
+                      <span>Você pode aprofundar com novas perguntas no mesmo chat</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-bn-primary mr-2">•</span>
-                      <span>Evite perguntas amplas ou subjetivas.</span>
+                      <span>Mudou o assunto? Inicie um novo chat comigo.</span>
                     </li>
                   </ul>
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-4">
-                    <p className="text-blue-800 text-sm flex items-center">
-                      <span className="mr-2">📋</span>
-                      <strong>Mudou de assunto? Inicie um novo chat!</strong>
-                    </p>
-                  </div>
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                    <p className="text-red-800 text-sm">
-                      <strong>⚠️</strong> Respondo apenas perguntas relacionadas à concessão de crédito.
-                    </p>
-                  </div>
+                </div>
+              </InfoCard>
+
+              <InfoCard 
+                icon={<Video className="text-white" size={24} />}
+                title="Vídeo de orientação"
+                delay="600ms"
+              >
+                <div className="space-y-3">
+                  <p>
+                    Assista ao vídeo ao lado e aprenda como interagir comigo da melhor forma!
+                  </p>
+                  <p className="font-medium text-gray-700">Você verá:</p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-bn-primary mr-2">•</span>
+                      <span>Como fazer perguntas eficientes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-bn-primary mr-2">•</span>
+                      <span>O que esperar das minhas respostas</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-bn-primary mr-2">•</span>
+                      <span>Dicas rápidas para aproveitar melhor o atendimento</span>
+                    </li>
+                  </ul>
+                </div>
+              </InfoCard>
+
+              <InfoCard 
+                icon={<BookOpen className="text-white" size={24} />}
+                title="Dicas para perguntar bem"
+                delay="800ms"
+              >
+                <div className="space-y-3">
+                  <p className="font-medium text-gray-700">Para ter respostas mais assertivas:</p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-bn-primary mr-2">•</span>
+                      <span>Seja específico (produto, porte, finalidade)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-bn-primary mr-2">•</span>
+                      <span>Dê contexto: "Como posso financiar um FNE SOL para uma Pessoa Física"</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-bn-primary mr-2">•</span>
+                      <span>Inclua o número da norma, se souber, isso me ajuda a entender melhor</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-bn-primary mr-2">•</span>
+                      <span>Evite perguntas genéricas ou muito amplas</span>
+                    </li>
+                  </ul>
                 </div>
               </InfoCard>
             </div>
