@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,23 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Banco do Nordeste red theme
+				'bn-red': {
+					50: '#fef2f2',
+					100: '#fee2e2',
+					200: '#fecaca',
+					300: '#fca5a5',
+					400: '#f87171',
+					500: '#ef4444',
+					600: '#dc2626',
+					700: '#b91c1c',
+					800: '#991b1b',
+					900: '#7f1d1d',
+					950: '#450a0a',
+				},
+				'bn-primary': '#A91E3C',
+				'bn-secondary': '#8B1538',
+				'bn-accent': '#C12447',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +102,33 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in-left': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'slide-in-left': 'slide-in-left 0.4s ease-out'
 			}
 		}
 	},
