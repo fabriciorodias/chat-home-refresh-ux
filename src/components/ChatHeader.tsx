@@ -25,10 +25,11 @@ const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
         {onNewChat && (
           <button
             onClick={onNewChat}
-            className="w-16 h-16 bg-gradient-to-br from-[#93233b] to-[#7a1e32] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-200 group"
+            className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-br from-[#93233b] to-[#7a1e32] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 group"
             title="Nova conversa"
           >
-            <Plus className="text-white group-hover:scale-110 transition-transform duration-200" size={24} />
+            <span className="text-white text-sm font-medium">Novo chat</span>
+            <Plus className="text-white group-hover:scale-110 transition-transform duration-200" size={16} />
           </button>
         )}
       </div>
