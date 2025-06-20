@@ -1,4 +1,3 @@
-
 import Sidebar from "@/components/Sidebar";
 import ChatHeader from "@/components/ChatHeader";
 import InfoCard from "@/components/InfoCard";
@@ -8,18 +7,20 @@ import { HelpCircle, Settings, Video, BookOpen } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="h-screen bg-gray-50 flex overflow-hidden">
       {/* Sidebar Container - Full Height */}
-      <div className="h-screen flex flex-col">
-        <Sidebar />
+      <div className="flex flex-col h-full">
+        <div className="flex-1">
+          <Sidebar />
+        </div>
         <UserProfile />
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col min-h-screen">
+      <div className="flex-1 flex flex-col h-full overflow-auto">
         <ChatHeader />
         
-        <div className="flex-1 p-4 lg:p-6">
+        <div className="flex-1 p-4 lg:p-6 overflow-auto">
           <div className="max-w-6xl mx-auto space-y-6">
             {/* Information Cards */}
             <div className="grid lg:grid-cols-2 gap-4 lg:gap-6">
