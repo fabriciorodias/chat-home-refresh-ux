@@ -27,6 +27,12 @@ const Chat = () => {
     scrollToBottom();
   }, [messages, isTyping]);
 
+  const handleNewChat = () => {
+    setMessages([]);
+    setMessage("");
+    setIsTyping(false);
+  };
+
   const handleSend = async () => {
     if (message.trim()) {
       const userMessage: ChatMessage = {
@@ -88,7 +94,7 @@ const Chat = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-full overflow-hidden">
-        <ChatHeader />
+        <ChatHeader onNewChat={handleNewChat} />
         
         <div className="flex-1 flex flex-col overflow-hidden">
           {showWelcomeScreen ? (
