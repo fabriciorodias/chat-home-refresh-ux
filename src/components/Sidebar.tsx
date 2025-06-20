@@ -1,4 +1,3 @@
-
 import { Home, Settings, BarChart3 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -6,7 +5,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 bg-[#a6193c] h-full flex flex-col shadow-2xl">
+    <div className="w-64 bg-[#93233b] h-full flex flex-col shadow-2xl">
       {/* Logo Section */}
       <div className="p-8 border-b border-white/20">
         <div className="flex items-center justify-center">

@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			colors: {
-				// Banco do Nordeste red theme - updated to match RGB 166,25,60
+				// Banco do Nordeste red theme - updated to match RGB 147,35,59
 				'bn-red': {
 					50: '#fdf2f4',
 					100: '#fce7ea',
@@ -28,13 +28,13 @@ export default {
 					400: '#ed7a8c',
 					500: '#e24c67',
 					600: '#ce2f4f',
-					700: '#a6193c', // RGB 166,25,60
-					800: '#8b1632',
-					900: '#76162e',
+					700: '#93233b', // RGB 147,35,59
+					800: '#7a1e32',
+					900: '#651a2a',
 					950: '#420814',
 				},
-				'bn-primary': '#a6193c', // RGB 166,25,60
-				'bn-secondary': '#8b1632',
+				'bn-primary': '#93233b', // RGB 147,35,59
+				'bn-secondary': '#7a1e32',
 				'bn-accent': '#ce2f4f',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
