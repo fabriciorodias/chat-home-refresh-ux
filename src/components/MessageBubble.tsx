@@ -1,6 +1,7 @@
 
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import MessageActions from "./MessageActions";
 
 interface MessageBubbleProps {
   message: {
@@ -8,10 +9,13 @@ interface MessageBubbleProps {
     content: string;
     isUser: boolean;
     timestamp: Date;
+    references?: string[];
+    feedback?: 'up' | 'down' | null;
   };
+  onFeedback: (messageId: string, feedback: 'up' | 'down') => void;
 }
 
-const MessageBubble = ({ message }: MessageBubbleProps) => {
+const MessageBubble = ({ message, onFeedback }: MessageBubbleProps) => {
   if (message.isUser) {
     return (
       <div className="flex justify-end mb-4 animate-fade-in">
@@ -32,7 +36,7 @@ const MessageBubble = ({ message }: MessageBubbleProps) => {
 
   return (
     <div className="flex justify-start mb-4 animate-fade-in">
-      <div className="flex items-end space-x-2 max-w-xs lg:max-w-md">
+      <div className="flex items-start space-x-2 max-w-xs lg:max-w-md">
         <div className="w-8 h-8 bg-gradient-to-br from-bn-primary to-bn-accent rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
           <img 
             src="/lovable-uploads/6d11c80a-4ac4-4bc6-9e77-bb935fd74a5a.png" 
@@ -45,6 +49,12 @@ const MessageBubble = ({ message }: MessageBubbleProps) => {
           <p className="text-xs text-gray-500 mt-1">
             {formatDistanceToNow(message.timestamp, { addSuffix: true, locale: ptBR })}
           </p>
+          <MessageActions
+            messageId={message.id}
+            references={message.references}
+            feedback={message.feedback}
+            onFeedback={onFeedback}
+          />
         </div>
       </div>
     </div>

@@ -4,4 +4,6 @@ export interface ChatMessage {
   content: string;
   isUser: boolean;
   timestamp: Date;
+  references?: string[];
+  feedback?: 'up' | 'down' | null;
 }

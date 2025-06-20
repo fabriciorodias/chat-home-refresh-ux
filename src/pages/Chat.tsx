@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -27,6 +26,14 @@ const Chat = () => {
     scrollToBottom();
   }, [messages, isTyping]);
 
+  const handleFeedback = (messageId: string, feedback: 'up' | 'down') => {
+    setMessages(prev => prev.map(msg => 
+      msg.id === messageId 
+        ? { ...msg, feedback: msg.feedback === feedback ? null : feedback }
+        : msg
+    ));
+  };
+
   const handleNewChat = () => {
     setMessages([]);
     setMessage("");
@@ -49,11 +56,21 @@ const Chat = () => {
       // Simulate LuzIA response delay
       setTimeout(() => {
         const responseContent = getMockResponse(message);
+        
+        // Add sample references for demonstration
+        const sampleReferences = [
+          "Resolução CMN nº 4.693/2018 - Diretrizes para concessão de crédito",
+          "Circular BCB nº 3.644/2013 - Procedimentos de análise de risco",
+          "Lei nº 4.595/1964 - Sistema Financeiro Nacional"
+        ];
+        
         const assistantMessage: ChatMessage = {
           id: (Date.now() + 1).toString(),
           content: responseContent,
           isUser: false,
           timestamp: new Date(),
+          references: sampleReferences,
+          feedback: null,
         };
 
         setMessages(prev => [...prev, assistantMessage]);
@@ -84,6 +101,7 @@ const Chat = () => {
 
   return (
     <div className="h-screen bg-gray-50 flex overflow-hidden">
+      
       {/* Sidebar Container - Full Height */}
       <div className="flex flex-col h-full">
         <div className="flex-1">
@@ -98,7 +116,7 @@ const Chat = () => {
         
         <div className="flex-1 flex flex-col overflow-hidden">
           {showWelcomeScreen ? (
-            /* Welcome Screen */
+            
             <div className="flex-1 p-4 lg:p-6 overflow-auto">
               <div className="max-w-4xl mx-auto space-y-6">
                 {/* Welcome Message */}
@@ -140,7 +158,11 @@ const Chat = () => {
                 <div className="p-4 lg:p-6">
                   <div className="max-w-4xl mx-auto">
                     {messages.map((msg) => (
-                      <MessageBubble key={msg.id} message={msg} />
+                      <MessageBubble 
+                        key={msg.id} 
+                        message={msg} 
+                        onFeedback={handleFeedback}
+                      />
                     ))}
                     {isTyping && <TypingIndicator />}
                     <div ref={messagesEndRef} />
@@ -150,7 +172,7 @@ const Chat = () => {
             </div>
           )}
 
-          {/* Chat Input - Always Visible */}
+          
           <div className="border-t border-gray-200 bg-white p-4 lg:p-6">
             <div className="max-w-4xl mx-auto">
               <div className="flex space-x-3">
