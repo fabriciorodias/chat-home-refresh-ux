@@ -3,7 +3,7 @@ import { Home, Settings, BarChart3 } from "lucide-react";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 bg-bn-primary min-h-screen flex flex-col shadow-2xl">
+    <div className="w-64 bg-bn-primary h-screen flex flex-col shadow-2xl">
       {/* Logo Section */}
       <div className="p-6 border-b border-bn-secondary/30">
         <div className="flex items-center space-x-3">
