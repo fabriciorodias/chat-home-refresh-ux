@@ -1,7 +1,5 @@
-
-
 import { useState, useEffect, useRef } from "react";
-import { Send } from "lucide-react";
+import { Send, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -167,8 +165,19 @@ const Chat = () => {
           )}
 
           
-          <div className="border-t border-gray-200 bg-white p-4 lg:p-6">
-            <div className="max-w-4xl mx-auto">
+          <div className="border-t border-gray-200 bg-white">
+            {/* Disclaimer Message */}
+            <div className="max-w-4xl mx-auto px-4 lg:px-6 pt-3">
+              <div className="flex items-start space-x-2 text-xs text-gray-600 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <Info size={14} className="text-amber-600 mt-0.5 flex-shrink-0" />
+                <p className="leading-relaxed">
+                  As respostas fornecidas pela LuzIA têm caráter de apoio e suporte. Elas não substituem os normativos oficiais do Banco e não devem ser utilizadas como decisão definitiva.
+                </p>
+              </div>
+            </div>
+            
+            {/* Input Area */}
+            <div className="max-w-4xl mx-auto p-4 lg:p-6">
               <div className="flex space-x-3">
                 <Input
                   value={message}
@@ -195,4 +204,3 @@ const Chat = () => {
 };
 
 export default Chat;
-
