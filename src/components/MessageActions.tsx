@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ThumbsUp, ThumbsDown, FileText, AlertTriangle } from "lucide-react";
+import { Copy, FileText, AlertTriangle, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -17,24 +17,28 @@ import {
 
 interface MessageActionsProps {
   messageId: string;
+  messageContent: string;
   references?: string[];
   feedback?: 'up' | 'down' | null;
   onFeedback: (messageId: string, feedback: 'up' | 'down') => void;
 }
 
-const MessageActions = ({ messageId, references = [], feedback, onFeedback }: MessageActionsProps) => {
+const MessageActions = ({ messageId, messageContent, references = [], feedback, onFeedback }: MessageActionsProps) => {
   const [reportOpen, setReportOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const handleThumbsUp = () => {
-    onFeedback(messageId, 'up');
-  };
-
-  const handleThumbsDown = () => {
-    onFeedback(messageId, 'down');
+  const handleCopyMessage = async () => {
+    try {
+      await navigator.clipboard.writeText(messageContent);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.error('Failed to copy message:', error);
+    }
   };
 
   return (
-    <div className="flex items-center gap-2 mt-3 pt-3 border-t border-gray-100">
+    <div className="flex items-center gap-2 mt-4 pt-3 border-t border-gray-100">
       {/* Referências */}
       {references.length > 0 && (
         <Popover>
@@ -42,7 +46,7 @@ const MessageActions = ({ messageId, references = [], feedback, onFeedback }: Me
             <Button 
               variant="ghost" 
               size="sm" 
-              className="h-8 px-3 text-xs text-gray-600 hover:text-bn-primary hover:bg-bn-primary/5"
+              className="h-8 px-3 text-xs text-gray-600 hover:text-bn-primary hover:bg-bn-primary/5 transition-colors"
             >
               <FileText size={14} className="mr-1" />
               Referências
@@ -69,7 +73,7 @@ const MessageActions = ({ messageId, references = [], feedback, onFeedback }: Me
           <Button 
             variant="ghost" 
             size="sm" 
-            className="h-8 px-3 text-xs text-gray-600 hover:text-orange-600 hover:bg-orange-50"
+            className="h-8 px-3 text-xs text-gray-600 hover:text-orange-600 hover:bg-orange-50 transition-colors"
           >
             <AlertTriangle size={14} className="mr-1" />
             Reportar problema
@@ -99,7 +103,6 @@ const MessageActions = ({ messageId, references = [], feedback, onFeedback }: Me
                 size="sm" 
                 className="bg-bn-primary hover:bg-bn-secondary"
                 onClick={() => {
-                  // Here you would handle the report submission
                   console.log('Problem reported for message:', messageId);
                   setReportOpen(false);
                 }}
@@ -114,33 +117,29 @@ const MessageActions = ({ messageId, references = [], feedback, onFeedback }: Me
       {/* Spacer */}
       <div className="flex-1" />
 
-      {/* Feedback Buttons */}
-      <div className="flex items-center gap-1">
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`h-8 w-8 p-0 ${
-            feedback === 'up' 
-              ? 'text-green-600 bg-green-50 hover:bg-green-100' 
-              : 'text-gray-400 hover:text-green-600 hover:bg-green-50'
-          }`}
-          onClick={handleThumbsUp}
-        >
-          <ThumbsUp size={14} />
-        </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`h-8 w-8 p-0 ${
-            feedback === 'down' 
-              ? 'text-red-600 bg-red-50 hover:bg-red-100' 
-              : 'text-gray-400 hover:text-red-600 hover:bg-red-50'
-          }`}
-          onClick={handleThumbsDown}
-        >
-          <ThumbsDown size={14} />
-        </Button>
-      </div>
+      {/* Copy Button */}
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`h-8 px-3 text-xs transition-all duration-200 ${
+          copied 
+            ? 'text-green-600 bg-green-50 hover:bg-green-100' 
+            : 'text-gray-600 hover:text-bn-primary hover:bg-bn-primary/5'
+        }`}
+        onClick={handleCopyMessage}
+      >
+        {copied ? (
+          <>
+            <Check size={14} className="mr-1" />
+            Copiado!
+          </>
+        ) : (
+          <>
+            <Copy size={14} className="mr-1" />
+            Copiar
+          </>
+        )}
+      </Button>
     </div>
   );
 };
