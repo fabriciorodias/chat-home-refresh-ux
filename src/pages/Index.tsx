@@ -1,3 +1,4 @@
+
 import Sidebar from "@/components/Sidebar";
 import ChatHeader from "@/components/ChatHeader";
 import InfoCard from "@/components/InfoCard";
@@ -6,6 +7,11 @@ import UserProfile from "@/components/UserProfile";
 import { HelpCircle, Settings, Video, BookOpen } from "lucide-react";
 
 const Index = () => {
+  const handleNewChat = () => {
+    // No chat functionality on Index page, so this is a no-op
+    console.log("New chat button clicked on Index page");
+  };
+
   return (
     <div className="h-screen bg-gray-50 flex overflow-hidden">
       {/* Sidebar Container - Full Height */}
@@ -18,7 +24,7 @@ const Index = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-full overflow-auto">
-        <ChatHeader />
+        <ChatHeader onNewChat={handleNewChat} />
         
         <div className="flex-1 p-4 lg:p-6 overflow-auto">
           <div className="max-w-6xl mx-auto space-y-6">
