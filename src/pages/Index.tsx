@@ -23,9 +23,9 @@ const Index = () => {
         <ChatHeader />
         
         <div className="flex-1 p-6 lg:p-8 overflow-auto">
-          <div className="max-w-6xl mx-auto space-y-8">
+          <div className="max-w-6xl mx-auto space-y-6">
             {/* Welcome Section */}
-            <div className="text-center space-y-3 mb-8">
+            <div className="text-center space-y-2 mb-6">
               <h1 className="text-3xl font-bold text-gray-800">
                 Bem-vindo à LuzIA
               </h1>
@@ -35,18 +35,18 @@ const Index = () => {
             </div>
 
             {/* Information Cards */}
-            <div className="grid lg:grid-cols-2 gap-6">
+            <div className="grid lg:grid-cols-2 gap-4">
               <InfoCard 
-                icon={<HelpCircle size={20} />}
+                icon={<HelpCircle size={18} />}
                 title="Quem sou?"
                 delay="100ms"
               >
-                <div className="space-y-4">
-                  <p className="font-medium text-gray-700">
+                <div className="space-y-3">
+                  <p className="font-medium text-gray-700 text-sm">
                     Olá! Sou a LuzIA, sua assistente virtual especializada em normas de concessão de crédito.
                   </p>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5">
                     <BulletPoint>
                       Especialista em normas de concessão de crédito
                     </BulletPoint>
@@ -64,16 +64,16 @@ const Index = () => {
               </InfoCard>
 
               <InfoCard 
-                icon={<Settings size={20} />}
+                icon={<Settings size={18} />}
                 title="Como funciona?"
                 delay="200ms"
               >
-                <div className="space-y-4">
-                  <p className="font-medium text-gray-700">
+                <div className="space-y-3">
+                  <p className="font-medium text-gray-700 text-sm">
                     Veja como posso te ajudar:
                   </p>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5">
                     <BulletPoint>
                       Envie sua dúvida em linguagem clara e objetiva
                     </BulletPoint>
@@ -94,18 +94,18 @@ const Index = () => {
               </InfoCard>
 
               <InfoCard 
-                icon={<Video size={20} />}
+                icon={<Video size={18} />}
                 title="Vídeo de orientação"
                 delay="300ms"
               >
-                <div className="space-y-4">
-                  <p className="text-gray-700">
+                <div className="space-y-3">
+                  <p className="text-gray-700 text-sm">
                     Assista ao vídeo e aprenda como interagir comigo da melhor forma!
                   </p>
                   
                   <div className="space-y-2">
-                    <p className="font-medium text-gray-700">🎥 Você verá:</p>
-                    <ul className="space-y-2">
+                    <p className="font-medium text-gray-700 text-sm">🎥 Você verá:</p>
+                    <ul className="space-y-1.5">
                       <BulletPoint>
                         Como fazer perguntas eficientes
                       </BulletPoint>
@@ -118,8 +118,8 @@ const Index = () => {
                     </ul>
                   </div>
 
-                  <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 text-center">
+                  <div className="mt-3 p-2.5 bg-gray-50 rounded-lg">
+                    <p className="text-xs text-gray-600 text-center">
                       💡 Assista antes de começar para ter a melhor experiência
                     </p>
                   </div>
@@ -127,16 +127,16 @@ const Index = () => {
               </InfoCard>
 
               <InfoCard 
-                icon={<BookOpen size={20} />}
+                icon={<BookOpen size={18} />}
                 title="Dicas para perguntar bem"
                 delay="400ms"
               >
-                <div className="space-y-4">
-                  <p className="font-medium text-gray-700">
+                <div className="space-y-3">
+                  <p className="font-medium text-gray-700 text-sm">
                     Para ter respostas mais assertivas:
                   </p>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5">
                     <BulletPoint>
                       Seja específico (produto, porte, finalidade)
                     </BulletPoint>
@@ -151,9 +151,9 @@ const Index = () => {
                     </BulletPoint>
                   </ul>
 
-                  <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 text-center">
-                      <Sparkles className="w-4 h-4 inline mr-1" />
+                  <div className="mt-3 p-2.5 bg-gray-50 rounded-lg">
+                    <p className="text-xs text-gray-600 text-center">
+                      <Sparkles className="w-3 h-3 inline mr-1" />
                       Quanto mais detalhes, melhor posso te ajudar!
                     </p>
                   </div>
@@ -162,7 +162,7 @@ const Index = () => {
             </div>
 
             {/* Chat Interface */}
-            <div className="mt-8">
+            <div className="mt-6">
               <ChatInterface />
             </div>
           </div>
