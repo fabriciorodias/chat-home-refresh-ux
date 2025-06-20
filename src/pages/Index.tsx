@@ -1,4 +1,3 @@
-
 import Sidebar from "@/components/Sidebar";
 import ChatHeader from "@/components/ChatHeader";
 import InfoCard from "@/components/InfoCard";
@@ -24,16 +23,6 @@ const Index = () => {
         
         <div className="flex-1 p-6 lg:p-8 overflow-auto">
           <div className="max-w-6xl mx-auto space-y-6">
-            {/* Welcome Section */}
-            <div className="text-center space-y-2 mb-6">
-              <h1 className="text-3xl font-bold text-gray-800">
-                Bem-vindo à LuzIA
-              </h1>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Sua assistente inteligente para orientações sobre normas de concessão de crédito do Banco do Nordeste
-              </p>
-            </div>
-
             {/* Information Cards */}
             <div className="grid lg:grid-cols-2 gap-4">
               <InfoCard 
