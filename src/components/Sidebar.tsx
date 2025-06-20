@@ -1,3 +1,4 @@
+
 import { Home, Settings, BarChart3 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -12,7 +13,7 @@ const Sidebar = () => {
           <img 
             src="/lovable-uploads/49466def-81cf-4537-bf05-a5c11305cf13.png" 
             alt="Banco do Nordeste" 
-            className="h-24 w-auto"
+            className="w-full h-auto"
           />
         </div>
       </div>
