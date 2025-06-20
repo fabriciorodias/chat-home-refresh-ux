@@ -104,14 +104,14 @@ const Chat = () => {
                 {/* Welcome Message */}
                 <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
                   <div className="text-center">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-2">Olá! Eu sou a LuzIA 👋</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-2">Olá! Eu sou a LuzIA</h2>
                     <p className="text-gray-600">Sua assistente virtual para dúvidas sobre normas de concessão de crédito</p>
                   </div>
                 </div>
 
                 {/* Prompt Suggestions */}
                 <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Exemplos de prompts:</h3>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Exemplos de perguntas:</h3>
                   <div className="grid md:grid-cols-2 gap-3">
                     {promptSuggestions.map((prompt, index) => (
                       <button
