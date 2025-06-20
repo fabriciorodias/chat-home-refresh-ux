@@ -1,4 +1,5 @@
 
+
 const UserProfile = () => {
   return (
     <div className="bg-white border-t border-gray-200 p-6 w-64">
@@ -7,8 +8,8 @@ const UserProfile = () => {
           FR
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-semibold text-gray-800 truncate">FABRÍCIO Rocha de Oliveira Dias</p>
-          <p className="text-sm text-gray-600 truncate">F121690</p>
+          <p className="font-semibold text-gray-800 truncate text-sm">FABRÍCIO Rocha de Oliveira Dias</p>
+          <p className="text-xs text-gray-600 truncate">F121690</p>
         </div>
       </div>
     </div>
@@ -16,3 +17,4 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
+
