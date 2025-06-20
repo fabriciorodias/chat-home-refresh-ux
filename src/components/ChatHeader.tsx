@@ -18,7 +18,7 @@ const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
             />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-800">Conheça sua Assistente de IA - LuzIA</h1>
+            <h1 className="text-2xl font-bold text-gray-800">LuzIA</h1>
             <p className="text-gray-600 mt-1">Sua assistente virtual para dúvidas sobre normas de concessão de crédito</p>
           </div>
         </div>
