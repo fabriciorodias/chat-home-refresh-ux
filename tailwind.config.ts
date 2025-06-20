@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,23 +19,23 @@ export default {
 		},
 		extend: {
 			colors: {
-				// Banco do Nordeste red theme
+				// Banco do Nordeste red theme - updated to match logo
 				'bn-red': {
-					50: '#fef2f2',
-					100: '#fee2e2',
-					200: '#fecaca',
-					300: '#fca5a5',
-					400: '#f87171',
-					500: '#ef4444',
-					600: '#dc2626',
-					700: '#b91c1c',
-					800: '#991b1b',
-					900: '#7f1d1d',
-					950: '#450a0a',
+					50: '#ffebee',
+					100: '#ffcdd2',
+					200: '#ef9a9a',
+					300: '#e57373',
+					400: '#ef5350',
+					500: '#f44336',
+					600: '#e53935',
+					700: '#d32f2f',
+					800: '#c62828',
+					900: '#b71c1c',
+					950: '#8d0e0e',
 				},
-				'bn-primary': '#A91E3C',
-				'bn-secondary': '#8B1538',
-				'bn-accent': '#C12447',
+				'bn-primary': '#D32F2F',
+				'bn-secondary': '#B71C1C',
+				'bn-accent': '#E53935',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

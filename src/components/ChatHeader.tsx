@@ -10,7 +10,7 @@ const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
     <div className="bg-white border-b border-gray-200 px-8 py-6 shadow-sm">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-bn-primary to-bn-accent rounded-full flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-gradient-to-br from-[#D32F2F] to-[#B71C1C] rounded-full flex items-center justify-center shadow-lg">
             <MessageSquare className="text-white" size={24} />
           </div>
           <div>
@@ -21,7 +21,7 @@ const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
         {onNewChat && (
           <button
             onClick={onNewChat}
-            className="w-16 h-16 bg-gradient-to-br from-bn-primary to-bn-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-200 group"
+            className="w-16 h-16 bg-gradient-to-br from-[#D32F2F] to-[#B71C1C] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-200 group"
             title="Nova conversa"
           >
             <Plus className="text-white group-hover:scale-110 transition-transform duration-200" size={24} />

@@ -6,14 +6,14 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 bg-bn-primary h-full flex flex-col shadow-2xl">
+    <div className="w-64 bg-[#D32F2F] h-full flex flex-col shadow-2xl">
       {/* Logo Section */}
-      <div className="p-6 border-b border-bn-secondary/30">
+      <div className="p-8 border-b border-white/20">
         <div className="flex items-center justify-center">
           <img 
             src="/lovable-uploads/49466def-81cf-4537-bf05-a5c11305cf13.png" 
             alt="Banco do Nordeste" 
-            className="h-12 w-auto"
+            className="h-20 w-auto"
           />
         </div>
       </div>
@@ -25,8 +25,8 @@ const Sidebar = () => {
             to="/" 
             className={`flex items-center space-x-3 px-4 py-3 text-white rounded-lg transition-all duration-200 ${
               location.pathname === "/" 
-                ? "bg-bn-secondary/30" 
-                : "text-white/80 hover:bg-bn-secondary/30"
+                ? "bg-white/20" 
+                : "text-white/80 hover:bg-white/10"
             }`}
           >
             <Home size={20} />
@@ -34,14 +34,14 @@ const Sidebar = () => {
           </Link>
           <a 
             href="#" 
-            className="flex items-center space-x-3 px-4 py-3 text-white/80 rounded-lg hover:bg-bn-secondary/30 transition-all duration-200"
+            className="flex items-center space-x-3 px-4 py-3 text-white/80 rounded-lg hover:bg-white/10 transition-all duration-200"
           >
             <Settings size={20} />
             <span className="font-medium">Parâmetros</span>
           </a>
           <a 
             href="#" 
-            className="flex items-center space-x-3 px-4 py-3 text-white/80 rounded-lg hover:bg-bn-secondary/30 transition-all duration-200"
+            className="flex items-center space-x-3 px-4 py-3 text-white/80 rounded-lg hover:bg-white/10 transition-all duration-200"
           >
             <BarChart3 size={20} />
             <span className="font-medium">Reportes</span>
@@ -50,7 +50,7 @@ const Sidebar = () => {
       </nav>
 
       {/* Version */}
-      <div className="p-4 border-t border-bn-secondary/30">
+      <div className="p-4 border-t border-white/20">
         <p className="text-white/60 text-sm">Versão: 1.1.0</p>
       </div>
     </div>
