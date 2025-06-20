@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Send, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -102,12 +103,17 @@ const Chat = () => {
   return (
     <div className="h-screen bg-gray-50 flex overflow-hidden">
       
-      {/* Sidebar Container - Full Height */}
-      <div className="flex flex-col h-full">
+      {/* Sidebar Container - Hidden on Mobile */}
+      <div className="hidden md:flex flex-col h-full">
         <div className="flex-1">
           <Sidebar />
         </div>
         <UserProfile />
+      </div>
+
+      {/* Mobile Sidebar */}
+      <div className="md:hidden">
+        <Sidebar />
       </div>
 
       {/* Main Content */}
@@ -120,9 +126,9 @@ const Chat = () => {
             <div className="flex-1 p-4 lg:p-6 overflow-auto">
               <div className="max-w-4xl mx-auto space-y-6">
                 {/* Prompt Suggestions */}
-                <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
+                <div className="bg-white rounded-xl shadow-md border border-gray-100 p-4 md:p-6">
                   <h3 className="text-lg font-semibold text-gray-800 mb-4">Exemplos de perguntas:</h3>
-                  <div className="grid md:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {promptSuggestions.map((prompt, index) => (
                       <button
                         key={index}
@@ -184,13 +190,13 @@ const Chat = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Digite sua pergunta aqui..."
-                  className="flex-1 h-12 px-4 border-2 border-gray-200 focus:border-bn-primary rounded-xl transition-colors"
+                  className="flex-1 h-12 px-4 border-2 border-gray-200 focus:border-bn-primary rounded-xl transition-colors text-sm md:text-base"
                   disabled={isTyping}
                 />
                 <Button
                   onClick={handleSend}
                   disabled={!message.trim() || isTyping}
-                  className="h-12 px-6 bg-gradient-to-r from-bn-primary to-bn-accent hover:from-bn-secondary hover:to-bn-primary disabled:opacity-50 disabled:cursor-not-allowed rounded-xl shadow-lg transition-all duration-200"
+                  className="h-12 px-4 md:px-6 bg-gradient-to-r from-bn-primary to-bn-accent hover:from-bn-secondary hover:to-bn-primary disabled:opacity-50 disabled:cursor-not-allowed rounded-xl shadow-lg transition-all duration-200"
                 >
                   <Send size={20} />
                 </Button>

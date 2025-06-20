@@ -1,3 +1,4 @@
+
 import Sidebar from "@/components/Sidebar";
 import ChatHeader from "@/components/ChatHeader";
 import InfoCard from "@/components/InfoCard";
@@ -9,22 +10,27 @@ import { HelpCircle, Settings, Video, BookOpen, Sparkles, CheckCircle } from "lu
 const Index = () => {
   return (
     <div className="h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 flex overflow-hidden">
-      {/* Sidebar Container - Full Height */}
-      <div className="flex flex-col h-full">
+      {/* Sidebar Container - Full Height on Desktop, Hidden on Mobile */}
+      <div className="hidden md:flex flex-col h-full">
         <div className="flex-1">
           <Sidebar />
         </div>
         <UserProfile />
       </div>
 
+      {/* Mobile Sidebar */}
+      <div className="md:hidden">
+        <Sidebar />
+      </div>
+
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-full overflow-auto">
         <ChatHeader />
         
-        <div className="flex-1 p-6 lg:p-8 overflow-auto">
-          <div className="max-w-6xl mx-auto space-y-6">
+        <div className="flex-1 p-4 md:p-6 lg:p-8 overflow-auto">
+          <div className="max-w-6xl mx-auto space-y-4 md:space-y-6">
             {/* Information Cards */}
-            <div className="grid lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <InfoCard 
                 icon={<HelpCircle size={18} />}
                 title="Quem sou?"
@@ -151,7 +157,7 @@ const Index = () => {
             </div>
 
             {/* Chat Interface */}
-            <div className="mt-6">
+            <div className="mt-4 md:mt-6">
               <ChatInterface />
             </div>
           </div>
