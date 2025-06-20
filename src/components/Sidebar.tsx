@@ -6,14 +6,14 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 bg-[#D32F2F] h-full flex flex-col shadow-2xl">
+    <div className="w-64 bg-[#a6193c] h-full flex flex-col shadow-2xl">
       {/* Logo Section */}
       <div className="p-8 border-b border-white/20">
         <div className="flex items-center justify-center">
           <img 
             src="/lovable-uploads/49466def-81cf-4537-bf05-a5c11305cf13.png" 
             alt="Banco do Nordeste" 
-            className="h-20 w-auto"
+            className="h-24 w-auto"
           />
         </div>
       </div>
