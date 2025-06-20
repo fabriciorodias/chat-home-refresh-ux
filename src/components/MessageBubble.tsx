@@ -33,11 +33,11 @@ const MessageBubble = ({ message }: MessageBubbleProps) => {
   return (
     <div className="flex justify-start mb-4 animate-fade-in">
       <div className="flex items-end space-x-2 max-w-xs lg:max-w-md">
-        <div className="w-8 h-8 bg-gradient-to-br from-bn-primary to-bn-accent rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="w-8 h-8 bg-gradient-to-br from-bn-primary to-bn-accent rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
           <img 
-            src="/lovable-uploads/f516e8ae-21fb-4abd-a064-1119a5ff1b65.png" 
+            src="/lovable-uploads/6d11c80a-4ac4-4bc6-9e77-bb935fd74a5a.png" 
             alt="LuzIA" 
-            className="w-6 h-6 rounded-full object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-md px-4 py-3 shadow-md">
