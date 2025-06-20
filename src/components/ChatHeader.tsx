@@ -2,7 +2,7 @@
 import { MessageSquare, Plus } from "lucide-react";
 
 interface ChatHeaderProps {
-  onNewChat: () => void;
+  onNewChat?: () => void;
 }
 
 const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
@@ -18,13 +18,15 @@ const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
             <p className="text-gray-600 mt-1">Sua assistente virtual para dúvidas sobre normas de concessão de crédito</p>
           </div>
         </div>
-        <button
-          onClick={onNewChat}
-          className="w-16 h-16 bg-gradient-to-br from-bn-primary to-bn-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-200 group"
-          title="Nova conversa"
-        >
-          <Plus className="text-white group-hover:scale-110 transition-transform duration-200" size={24} />
-        </button>
+        {onNewChat && (
+          <button
+            onClick={onNewChat}
+            className="w-16 h-16 bg-gradient-to-br from-bn-primary to-bn-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-200 group"
+            title="Nova conversa"
+          >
+            <Plus className="text-white group-hover:scale-110 transition-transform duration-200" size={24} />
+          </button>
+        )}
       </div>
     </div>
   );
