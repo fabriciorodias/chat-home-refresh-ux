@@ -1,5 +1,5 @@
 
-import { MessageSquare, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 interface ChatHeaderProps {
   onNewChat?: () => void;
@@ -10,8 +10,12 @@ const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
     <div className="bg-white border-b border-gray-200 px-8 py-6 shadow-sm">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-[#93233b] to-[#7a1e32] rounded-full flex items-center justify-center shadow-lg">
-            <MessageSquare className="text-white" size={24} />
+          <div className="w-12 h-12 bg-gradient-to-br from-[#93233b] to-[#7a1e32] rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+            <img 
+              src="/lovable-uploads/6d11c80a-4ac4-4bc6-9e77-bb935fd74a5a.png" 
+              alt="LuzIA Assistant" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Conheça sua Assistente de IA - LuzIA</h1>
