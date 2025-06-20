@@ -1,4 +1,3 @@
-
 import { Home, Settings, BarChart3 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -9,14 +8,12 @@ const Sidebar = () => {
     <div className="w-64 bg-bn-primary h-full flex flex-col shadow-2xl">
       {/* Logo Section */}
       <div className="p-6 border-b border-bn-secondary/30">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-            <span className="text-bn-primary font-bold text-lg">BN</span>
-          </div>
-          <div className="text-white">
-            <h2 className="font-bold text-lg">Banco do</h2>
-            <h2 className="font-bold text-lg -mt-1">Nordeste</h2>
-          </div>
+        <div className="flex items-center justify-center">
+          <img 
+            src="/lovable-uploads/3caebf93-14b1-4c43-8bd1-59b9f2b708b1.png" 
+            alt="Banco do Nordeste" 
+            className="h-12 w-auto"
+          />
         </div>
       </div>
 
