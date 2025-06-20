@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect, useRef } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -87,6 +88,19 @@ const Chat = () => {
     }
   };
 
+  const handlePromptClick = (prompt: string) => {
+    setMessage(prompt);
+  };
+
+  const promptSuggestions = [
+    "Quais são os requisitos para aprovar um financiamento FNE para pessoa física?",
+    "Como devo proceder para análise de crédito de uma empresa do setor industrial?",
+    "Qual o limite de crédito para microempresas no programa FNE?",
+    "Como avaliar a capacidade de pagamento de um cliente pessoa jurídica?"
+  ];
+
+  const showPromptSuggestions = messages.length === 0 && !isTyping;
+
   return (
     <div className="h-screen bg-gray-50 flex overflow-hidden">
       
@@ -103,24 +117,54 @@ const Chat = () => {
         <ChatHeader onNewChat={handleNewChat} />
         
         <div className="flex-1 flex flex-col overflow-hidden">
-          {/* Chat Conversation */}
-          <div className="flex-1 overflow-hidden">
-            <ScrollArea className="h-full" ref={scrollAreaRef}>
-              <div className="p-4 lg:p-6">
-                <div className="max-w-4xl mx-auto">
-                  {messages.map((msg) => (
-                    <MessageBubble 
-                      key={msg.id} 
-                      message={msg} 
-                      onFeedback={handleFeedback}
-                    />
-                  ))}
-                  {isTyping && <TypingIndicator />}
-                  <div ref={messagesEndRef} />
+          {showPromptSuggestions ? (
+            
+            <div className="flex-1 p-4 lg:p-6 overflow-auto">
+              <div className="max-w-4xl mx-auto space-y-6">
+                {/* Prompt Suggestions */}
+                <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Exemplos de perguntas:</h3>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {promptSuggestions.map((prompt, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handlePromptClick(prompt)}
+                        className="bg-gray-50 hover:bg-gray-100 rounded-xl p-4 border border-gray-100 transition-colors text-left"
+                      >
+                        <div className="flex items-start space-x-3">
+                          <div className="w-6 h-6 bg-bn-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span className="text-bn-primary text-xs">💡</span>
+                          </div>
+                          <div>
+                            <p className="text-gray-700 text-sm leading-relaxed">{prompt}</p>
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </ScrollArea>
-          </div>
+            </div>
+          ) : (
+            /* Chat Conversation */
+            <div className="flex-1 overflow-hidden">
+              <ScrollArea className="h-full" ref={scrollAreaRef}>
+                <div className="p-4 lg:p-6">
+                  <div className="max-w-4xl mx-auto">
+                    {messages.map((msg) => (
+                      <MessageBubble 
+                        key={msg.id} 
+                        message={msg} 
+                        onFeedback={handleFeedback}
+                      />
+                    ))}
+                    {isTyping && <TypingIndicator />}
+                    <div ref={messagesEndRef} />
+                  </div>
+                </div>
+              </ScrollArea>
+            </div>
+          )}
 
           
           <div className="border-t border-gray-200 bg-white p-4 lg:p-6">
@@ -151,3 +195,4 @@ const Chat = () => {
 };
 
 export default Chat;
+
