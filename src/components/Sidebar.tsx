@@ -1,7 +1,10 @@
 
 import { Home, Settings, BarChart3 } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+
   return (
     <div className="w-64 bg-bn-primary h-full flex flex-col shadow-2xl">
       {/* Logo Section */}
@@ -20,13 +23,17 @@ const Sidebar = () => {
       {/* Navigation */}
       <nav className="flex-1 p-4">
         <div className="space-y-2">
-          <a 
-            href="#" 
-            className="flex items-center space-x-3 px-4 py-3 text-white bg-bn-secondary/30 rounded-lg hover:bg-bn-secondary/50 transition-all duration-200"
+          <Link 
+            to="/" 
+            className={`flex items-center space-x-3 px-4 py-3 text-white rounded-lg transition-all duration-200 ${
+              location.pathname === "/" 
+                ? "bg-bn-secondary/30" 
+                : "text-white/80 hover:bg-bn-secondary/30"
+            }`}
           >
             <Home size={20} />
             <span className="font-medium">Início</span>
-          </a>
+          </Link>
           <a 
             href="#" 
             className="flex items-center space-x-3 px-4 py-3 text-white/80 rounded-lg hover:bg-bn-secondary/30 transition-all duration-200"
