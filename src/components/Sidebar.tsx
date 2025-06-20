@@ -1,3 +1,4 @@
+
 import { Home, Settings, BarChart3 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -10,7 +11,7 @@ const Sidebar = () => {
       <div className="p-6 border-b border-bn-secondary/30">
         <div className="flex items-center justify-center">
           <img 
-            src="/lovable-uploads/3caebf93-14b1-4c43-8bd1-59b9f2b708b1.png" 
+            src="/lovable-uploads/49466def-81cf-4537-bf05-a5c11305cf13.png" 
             alt="Banco do Nordeste" 
             className="h-12 w-auto"
           />
