@@ -18,24 +18,55 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Heebo', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+			},
 			colors: {
-				// Banco do Nordeste red theme - updated to match RGB 147,35,59
+				// Banco do Nordeste red theme - RGB 166,25,60
 				'bn-red': {
-					50: '#fdf2f4',
-					100: '#fce7ea',
-					200: '#f9d0d6',
-					300: '#f4a8b4',
-					400: '#ed7a8c',
-					500: '#e24c67',
-					600: '#ce2f4f',
-					700: '#93233b', // RGB 147,35,59
-					800: '#7a1e32',
-					900: '#651a2a',
-					950: '#420814',
+					50: '#fef2f5',
+					100: '#fde5e9',
+					200: '#fbc9d1',
+					300: '#f79aaa',
+					400: '#f26d83',
+					500: '#d84761',
+					600: '#c32244',
+					700: '#A6193C', // RGB 166,25,60 - Primary Red
+					800: '#851529',
+					900: '#6b1221',
+					950: '#3d0a14',
 				},
-				'bn-primary': '#93233b', // RGB 147,35,59
-				'bn-secondary': '#7a1e32',
-				'bn-accent': '#ce2f4f',
+				// Orange accent theme - RGB 246,139,31
+				'bn-orange': {
+					50: '#fff8ed',
+					100: '#fff0d4',
+					200: '#ffdda8',
+					300: '#ffc570',
+					400: '#ffa137',
+					500: '#F68B1F', // RGB 246,139,31 - Primary Orange
+					600: '#e06b08',
+					700: '#bb5109',
+					800: '#964010',
+					900: '#7a3610',
+					950: '#461a06',
+				},
+				// Gray theme - RGB 100,100,100
+				'bn-gray': {
+					50: '#fafafa',
+					100: '#f5f5f5',
+					200: '#e5e5e5',
+					300: '#d4d4d4',
+					400: '#a3a3a3',
+					500: '#646464', // RGB 100,100,100 - Primary Gray
+					600: '#525252',
+					700: '#404040',
+					800: '#262626',
+					900: '#171717',
+					950: '#0a0a0a',
+				},
+				'bn-primary': '#A6193C', // RGB 166,25,60
+				'bn-secondary': '#851529',
+				'bn-accent': '#F68B1F', // RGB 246,139,31
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

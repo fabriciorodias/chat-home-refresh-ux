@@ -16,7 +16,7 @@ const Sidebar = () => {
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMobileMenu}
-        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-[#93233b] text-white rounded-lg shadow-lg"
+        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-[#A6193C] text-white rounded-lg shadow-lg"
       >
         {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
@@ -31,7 +31,7 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div className={`
-        w-64 bg-[#93233b] h-full flex flex-col shadow-2xl transition-transform duration-300 ease-in-out
+        w-64 bg-[#A6193C] h-full flex flex-col shadow-2xl transition-transform duration-300 ease-in-out
         md:translate-x-0 md:relative md:z-auto
         ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
         fixed md:static z-50

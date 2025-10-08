@@ -10,7 +10,7 @@ const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
     <div className="bg-white border-b border-gray-200 px-8 py-6 shadow-sm">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-[#93233b] to-[#7a1e32] rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+          <div className="w-12 h-12 bg-gradient-to-br from-[#A6193C] to-[#851529] rounded-full flex items-center justify-center shadow-lg overflow-hidden">
             <img 
               src="/lovable-uploads/6d11c80a-4ac4-4bc6-9e77-bb935fd74a5a.png" 
               alt="LuzIA Assistant" 
@@ -25,7 +25,7 @@ const ChatHeader = ({ onNewChat }: ChatHeaderProps) => {
         {onNewChat && (
           <button
             onClick={onNewChat}
-            className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-br from-[#93233b] to-[#7a1e32] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 group"
+            className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-br from-[#A6193C] to-[#851529] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 group"
             title="Nova conversa"
           >
             <span className="text-white text-sm font-medium">Novo chat</span>
